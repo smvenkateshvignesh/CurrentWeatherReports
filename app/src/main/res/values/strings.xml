@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">WeatherReport</string>
+    <string name="weather_reports">Weather Reports</string>
+    <string name="enter_city_name">Enter City Name:</string>
+    <string name="hint">e.g. London</string>
+    <string name="get_weather">Get Weather</string>
+    <string name="API_KEY">fc6be2ed7c0d9b86f3f33b5f4a85e046</string>
+    <string name="internet_connection_error">Please Check your Internet Connection</string>
+    <string name="error_enter_city_name">Please enter the city name</string>
+    <string name="progress_dialoug_message">Fetching details please wait...</string>
+    <string name="humidity">Humidity</string>
+    <string name="clouds">Clouds</string>
+    <string name="default_cloudy">Cloudy</string>
+    <string name="default_overcast_clouds">Overcast clouds</string>
+    <string name="default_london">London</string>
+    <string name="default__4_u2103">-4℃</string>
+    <string name="default_min_5_u2103_max_5_u2103">Min. -5℃ Max. 5℃</string>
+    <string name="default_20">20%</string>
+</resources>

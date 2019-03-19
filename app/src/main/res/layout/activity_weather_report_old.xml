@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintGuide_begin="@dimen/dimen_10"
+    tools:context=".weatherreports.WeatherReportActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimen_10" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dimen_10" />
+
+    <TextView
+        android:id="@+id/tvCityNameHeading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:text="@string/enter_city_name"
+        android:textSize="@dimen/size_12"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/atvCityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:background="@drawable/bg_auto_complete"
+        android:hint="@string/hint"
+        android:padding="@dimen/dimen_5"
+        android:textSize="@dimen/size_16"
+        android:inputType = "text"
+        android:imeOptions="actionDone"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/tvCityNameHeading"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/btnGetWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:background="@drawable/bg_btn_get_result"
+        android:paddingLeft="@dimen/dimen_25"
+        android:paddingRight="@dimen/dimen_25"
+        android:text="@string/get_weather"
+        android:textAllCaps="false"
+        android:textColor="@color/color_white"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/atvCityName" />
+    <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_60"
+        android:text="@string/default_london"
+        android:gravity="center"
+        android:textSize="@dimen/size_30"
+        android:textStyle="bold"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/btnGetWeather"/>
+    <TextView
+        android:id="@+id/tvCityTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="@string/default__4_u2103"
+        android:gravity="center"
+        android:textSize="@dimen/size_44"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/tvCityName"/>
+
+    <TextView
+        android:id="@+id/tvCityMinAndMAxTemperature"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_21"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:gravity="center"
+        android:text="@string/default_min_5_u2103_max_5_u2103"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/size_14"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/tvCityTemperature" />
+    <TextView
+        android:id="@+id/tvCityWeatherType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="@string/default_cloudy"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:textSize="@dimen/size_30"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/tvCityMinAndMAxTemperature"/>
+    <TextView
+        android:id="@+id/tvCityWeatherTypeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="@string/default_overcast_clouds"
+        android:gravity="center"
+        android:textSize="@dimen/size_30"
+        android:textStyle="normal"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toBottomOf="@id/tvCityWeatherType"/>
+    <TextView
+        android:id="@+id/tvCityHumidityPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_35"
+        android:text="@string/default_20"
+        android:textSize="@dimen/size_16"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/tvCityHumidity"
+        app:layout_constraintRight_toRightOf="@id/tvCityHumidity"
+        app:layout_constraintTop_toBottomOf="@id/tvCityWeatherTypeDesc"/>
+    <TextView
+        android:id="@+id/tvCityCloudsPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_20"
+        android:textSize="@dimen/size_16"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toLeftOf="@id/tvCityClouds"
+        app:layout_constraintRight_toRightOf="@id/tvCityClouds"
+        app:layout_constraintTop_toTopOf="@id/tvCityHumidityPercentage"/>
+    <TextView
+        android:id="@+id/tvCityHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="@string/humidity"
+        android:textSize="@dimen/size_16"
+        android:textColor="@color/color_black"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="@id/guide_left"
+        app:layout_constraintRight_toLeftOf="@id/tvCityClouds"
+        app:layout_constraintTop_toBottomOf="@id/tvCityHumidityPercentage"/>
+    <TextView
+        android:id="@+id/tvCityClouds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clouds"
+        android:textSize="@dimen/size_16"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toRightOf="@id/tvCityHumidity"
+        app:layout_constraintRight_toRightOf="@id/guide_right"
+        app:layout_constraintTop_toTopOf="@id/tvCityHumidity"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
