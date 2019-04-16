@@ -63,6 +63,8 @@ public class WeatherAsyncTask extends AsyncTask<String, Void, JSONObject> {
                 } else {
                     weatherReportView.showErrorMessage(jsonObject.getString("message"));
                 }
+            }else{
+                weatherReportView.showErrorMessage("Api error");
             }
         } catch (JSONException e) {
             e.printStackTrace();
