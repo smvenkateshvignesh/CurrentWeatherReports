@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.example.weatherreport.R;
 import com.example.weatherreport.model.WeatherDataModel;
+import com.gjiazhe.panoramaimageview.GyroscopeObserver;
+import com.gjiazhe.panoramaimageview.PanoramaImageView;
 
 public class WeatherReportActivity extends AppCompatActivity implements WeatherReportView, View.OnClickListener {
     private WeatherReportPresenter weatherReportPresenter;
@@ -28,6 +30,7 @@ public class WeatherReportActivity extends AppCompatActivity implements WeatherR
     private TextView tvCityName, tvCityTemperature, tvCityMinAndMAxTemperature, tvCityWeatherType, tvCityWeatherTypeDesc, tvCityHumidityPercentage, tvCityCloudsPercentage;
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     private long mBackPressedOldTime;
+    private GyroscopeObserver gyroscopeObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,10 @@ public class WeatherReportActivity extends AppCompatActivity implements WeatherR
      */
     private void init() {
         weatherReportPresenter = new WeatherReportPresenter(this);
+        gyroscopeObserver = new GyroscopeObserver();
+
+        PanoramaImageView panoramaImageView =findViewById(R.id.panorama_image_view);
+        panoramaImageView.setGyroscopeObserver(gyroscopeObserver);
         btnGetWeather = findViewById(R.id.btnGetWeather);
         atvCityName = findViewById(R.id.atvCityName);
         tvCityName = findViewById(R.id.tvCityName);
@@ -153,5 +160,16 @@ public class WeatherReportActivity extends AppCompatActivity implements WeatherR
             Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show();
         }
         mBackPressedOldTime = System.currentTimeMillis();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gyroscopeObserver.register(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gyroscopeObserver.unregister();
     }
 }

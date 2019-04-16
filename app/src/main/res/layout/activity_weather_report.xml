@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
    android:background="@drawable/beach_blue"
     tools:context=".weatherreports.WeatherReportActivity">
+    <com.gjiazhe.panoramaimageview.PanoramaImageView
+        android:id="@+id/panorama_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/beach_sunset_panorama" />
     <!--android:background="#F8F8F8"-->
     <android.support.constraint.Guideline
         android:id="@+id/guide_out_left"
