@@ -32,6 +32,6 @@ class WeatherReportPresenter {
 
             }
         });
-//        new WeatherAsyncTask(weatherReportView).execute(cityName);
+        new WeatherAsyncTask(weatherReportView).execute(cityName);
     }
 }
